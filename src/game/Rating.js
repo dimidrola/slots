@@ -120,6 +120,7 @@ export default class Rating{
 			line.position.x = this.lines[item].position.x;
 			line.position.y = this.lines[item].position.y;
 			line.alpha      = this.lines[item].alpha;
+			line.rotation   = this.lines[item].rotation;
 			line.anchor.set(0.5)
 			this.stash.push(line)
 			this.linesContainer.addChild(line)

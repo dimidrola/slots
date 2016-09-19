@@ -1,2 +1,2 @@
-import Controller from './core/controller'
+import Controller from './game/controller'
 new Controller;

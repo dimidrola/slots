@@ -1,29 +1,23 @@
 export default class Button{
-	constructor(onspeen){
-		this.onSpeen = onspeen;
+	constructor(){
+		this.onSpeen = null;
+		this.button = null;
 		this.position = {
-			x:870,
-			y:270
+			x:null,
+			y:null
 		};
-	
-		this.active = true;
-		
-		this.activeTexture = PIXI.loader.resources["BTN_Spin"].texture;
-		this.inactiveTexture = PIXI.loader.resources["BTN_Spin_d"].texture;
-		
 		this.container = new PIXI.Container();
-		this.container.position.x = this.position.x;
-		this.container.position.y = this.position.y;
-		
-		this.button = new PIXI.Sprite(this.activeTexture);
-		this.button.buttonMode = true;
-		this.button.interactive = true;
-		this.button.anchor.set(0.5);
-		
-		this.container.addChild(this.button);
-		this.bindEvents();
-		
+		this.active = true;
 	}
+	
+	createButton(){
+		let _bt = new PIXI.Sprite(this.activeTexture);
+		_bt.buttonMode = true;
+		_bt.interactive = true;
+		_bt.anchor.set(0.5);
+		return _bt;
+	}
+	
 	bindEvents(){
 		this.button
 			.on('mouseover', this.onHover.bind(this))
